@@ -1,28 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import ParaComer from '../src/Screens/ParaComer';
-import ParaTomar from '../src/Screens/ParaTomar';
+import RositaBebidas from "./Screens/RositaBebidas";
+import RositaComidas from "./Screens/RositaComidas";
+import MenuScreen from "./Screens/MenuScreen";
 
 const Home = () => <h1>Bienvenido al Bar</h1>;
-const Menu1 = () => <h1>Menú 1: Bebidas</h1>;
-const Menu2 = () => <h1>Menú 2: Comidas</h1>;
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/menu">Menú Bebidas</Link></li>
-          <li><Link to="/rositaComidas">Menú Comidas</Link></li>
-          <li><Link to="/rositaBebidas">Menú Bebidas</Link></li>
-        </ul>
-      </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<ParaComer />} />
-        <Route path="/rositaComidas" element={<ParaComer />} />
-        <Route path="/rositaBebidas" element={<ParaTomar />} />
+        <Route path="/menu" element={<MenuScreen />} />
+        <Route path="/rositaComidas" element={<RositaComidas />} />
+        <Route path="/rositaBebidas" element={<RositaBebidas />} />
       </Routes>
     </Router>
   );

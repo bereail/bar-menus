@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #d4a5b0; /* Color de fondo */
+  }
+  
+  .scrollContainer {
+    flex-grow: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-y: auto; /* Habilita desplazamiento vertical */
+  }
+  
+  .category {
+    margin-bottom: 25px; /* Margen dinámico controlado por inline styles */
+  }
+  
+  .categoryTitle {
+    color: #4a4a4a;
+    font-weight: bold;
+    text-align: center;
+  }
+  
