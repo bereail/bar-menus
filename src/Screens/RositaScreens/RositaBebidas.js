@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./RositaBebidas.module.css"; // Importamos CSS Modules
-import HeaderInfo from "../Components/HeaderInfo";
-import MenuDataComidas from "./Menu/MenuData/MenuDataComidas";
-import MenuItem from "./Menu/MenuItem/MenuItem";
+import HeaderInfo from "../../Components/RositaComponents/HeaderInfo";
+import MenuDataBebidas from "../../Components/RositaMenu/MenuData/MenuDataBebidas";
+import MenuItem from "../../Components/RositaMenu/MenuItem/MenuItem";
+import Footer from "../../Components/RositaComponents/Footer";
+
 
 const RositaBebidas = () => {
   const width = window.innerWidth;
@@ -18,13 +20,14 @@ const RositaBebidas = () => {
         className={styles.scrollContainer}
         style={{ padding: `0 ${Math.min(width * 0.05, 60)}px` }}
       >
+
         {/* Encabezado */}
         <div style={{ marginBottom: `${dynamicMargin}px` }}>
           <HeaderInfo />
         </div>
 
         {/* Categorías del menú */}
-        {MenuDataComidas.map((category) => (
+        {MenuDataBebidas.map((category) => (
           <div
             key={category.category}
             className={styles.category}
@@ -47,6 +50,8 @@ const RositaBebidas = () => {
           </div>
         ))}
       </div>
+      
+      <Footer />
     </div>
   );
 };

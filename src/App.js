@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import RositaBebidas from "./Screens/RositaBebidas";
-import RositaComidas from "./Screens/RositaComidas";
-import MenuScreen from "./Screens/MenuScreen";
+import RositaBebidas from '../src/Screens/RositaScreens/RositaBebidas';
+import RositaComidas from '../src/Screens/RositaScreens/RositaComidas';
+import Home from '../src/Components/Home/Home';
+import RositaMenu from '../src/Screens/RositaScreens/RositaMenu';
 
-const Home = () => <h1>Bienvenido al Bar</h1>;
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<MenuScreen />} />
+        <Route path="/menuRosita" element={<RositaMenu />} />
         <Route path="/rositaComidas" element={<RositaComidas />} />
         <Route path="/rositaBebidas" element={<RositaBebidas />} />
       </Routes>

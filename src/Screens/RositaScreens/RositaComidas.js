@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./RositaComidas.module.css"; // Importamos CSS Modules
-import HeaderInfo from "../Components/HeaderInfo";
-import MenuDataBebidas from "./Menu/MenuData/MenuDataBebidas";
-import MenuItem from "./Menu/MenuItem/MenuItem";
+import HeaderInfo from "../../Components/RositaComponents/HeaderInfo";
+import MenuDataComidas from "../../Components/RositaMenu/MenuData/MenuDataComidas";
+import MenuItem from "../../Components/RositaMenu/MenuItem/MenuItem";
+import Footer from "../../Components/RositaComponents/Footer";
 
 const RositaComidas = () => {
   // Obtenemos las dimensiones de la ventana
@@ -15,13 +16,14 @@ const RositaComidas = () => {
 
   return (
     <div className={styles.container}>
+
       {/* Componente desplazable */}
       <div className={styles.scrollContainer}>
         {/* Encabezado del menú */}
         <HeaderInfo />
 
         {/* Renderizamos las categorías del menú */}
-        {MenuDataBebidas.map((category) => (
+        {MenuDataComidas.map((category) => (
           <div
             key={category.category}
             className={styles.category}
@@ -46,6 +48,8 @@ const RositaComidas = () => {
           </div>
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 };

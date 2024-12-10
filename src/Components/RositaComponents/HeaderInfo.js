@@ -1,17 +1,20 @@
 import React from "react";
 import { MdLocationOn } from "react-icons/md"; // Ícono de ubicación
 import { FaInstagram } from "react-icons/fa"; // Ícono de Instagram
+import { Link } from "react-router-dom"; // Importa Link de React Router
 import styles from "./HeaderInfo.module.css"; // Importa los estilos del módulo CSS
 
 const HeaderInfo = () => {
   return (
     <div className={styles.container}>
-      {/* Logo */}
-      <img
-        src={require("../assets/img/Logo.png")} // Ruta de tu logo
-        className={styles.logo}
-        alt="Logo"
-      />
+      {/* Logo que redirige a /menuRosita */}
+      <Link to="/menuRosita">
+        <img
+          src={require("../../assets/imgRosita/LogoRosita.png")} // Ruta de tu logo
+          className={styles.logo}
+          alt="Logo"
+        />
+      </Link>
 
       {/* Dirección con ícono de ubicación */}
       <a

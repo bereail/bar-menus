@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../MenuItem.module.css"; // Importa los estilos del módulo CSS
+import styles from "../MenuItem/MenuItem.module.css"; // Importa los estilos del módulo CSS
 
 const MenuItem = ({ name, price, description }) => (
   <>

@@ -1,0 +1,82 @@
+/* Contenedor principal que ocupa toda la altura */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #d4a5b0; /* Color de fondo */
+  box-sizing: border-box;
+}
+
+/* Contenedor desplazable */
+.scrollContainer {
+  flex-grow: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: auto; /* Habilita desplazamiento vertical */
+  padding-left: 5%; /* Agrega espacio en los laterales */
+  padding-right: 5%; /* Agrega espacio en los laterales */
+}
+
+/* Estilo de las categorías */
+.category {
+  margin-bottom: 25px; /* Margen dinámico controlado por inline styles */
+}
+
+/* Estilo del título de la categoría */
+.categoryTitle {
+  color: #4a4a4a;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px; /* Tamaño de fuente inicial */
+}
+
+/* Media Queries para hacerlo responsivo */
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  .categoryTitle {
+    font-size: 28px; /* Aumenta el tamaño de la fuente en pantallas grandes */
+  }
+
+  .category {
+    margin-bottom: 30px; /* Aumenta el margen en pantallas grandes */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .categoryTitle {
+    font-size: 26px; /* Aumenta ligeramente el tamaño de la fuente */
+  }
+
+  .category {
+    margin-bottom: 20px; /* Reducir el margen entre categorías */
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .categoryTitle {
+    font-size: 20px; /* Reducción del tamaño de fuente para pantallas más pequeñas */
+    padding: 0 10px; /* Añadir un poco de relleno para evitar que el texto quede pegado al borde */
+  }
+
+  .category {
+    margin-bottom: 15px; /* Reducir margen entre categorías */
+  }
+
+  .scrollContainer {
+    padding-left: 3%; /* Ajuste de los laterales en pantallas pequeñas */
+    padding-right: 3%; /* Ajuste de los laterales en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryTitle {
+    font-size: 18px; /* Tamaño de fuente más pequeño */
+  }
+
+  .category {
+    margin-bottom: 10px; /* Aumentar el margen para evitar que las categorías estén muy pegadas */
+  }
+}
