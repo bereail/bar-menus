@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"; // Cambiado para React
 import { MdFastfood, MdLocalDrink } from "react-icons/md"; // Importación correcta de íconos
 import styles from "./RositaMenu.module.css";
 import HeaderInfo from '../../Components/RositaComponents/HeaderInfo';
-import Footer from "../../Components/RositaComponents/Footer";
 
 const MenuScreen = () => {
   const navigate = useNavigate();
