@@ -1,0 +1,16 @@
+/* index.module.css */
+
+/* Estilos globales para el fondo y la fuente */
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif; /* Fuente que has elegido */
+    background-color: #d4a5b0; /* El color de fondo que deseas */
+    box-sizing: border-box; /* Asegura que los márgenes y el padding no afecten el tamaño */
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  }
+  

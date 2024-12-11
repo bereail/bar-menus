@@ -2,7 +2,7 @@
   "name": "bar-menus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ailonline.com",
+  "homepage": "https://ailonline.com.ar",
   "dependencies": {
     "axios": "^1.7.9",
     "cra-template": "1.2.0",

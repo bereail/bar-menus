@@ -20,7 +20,6 @@ const RositaBebidas = () => {
         className={styles.scrollContainer}
         style={{ padding: `0 ${Math.min(width * 0.05, 60)}px` }}
       >
-
         {/* Encabezado */}
         <div style={{ marginBottom: `${dynamicMargin}px` }}>
           <HeaderInfo />
@@ -50,10 +49,11 @@ const RositaBebidas = () => {
           </div>
         ))}
       </div>
-      
+
       <Footer />
     </div>
   );
 };
+
 
 export default RositaBebidas;

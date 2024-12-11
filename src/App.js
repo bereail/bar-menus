@@ -12,9 +12,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+
+
+        {/*RositaDescorcha*/}
         <Route path="/menuRosita" element={<RositaMenu />} />
         <Route path="/rositaComidas" element={<RositaComidas />} />
         <Route path="/rositaBebidas" element={<RositaBebidas />} />
+
+        
       </Routes>
     </Router>
   );

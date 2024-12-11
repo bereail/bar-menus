@@ -1,39 +1,55 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 55px;
-    padding: 0 16px;
-    width: 100%;
-    margin-top: calc(40px + (120px - 40px) * var(--platform-scale));
+  display: flex; /* Utiliza un contenedor flexible para organizar los elementos hijos. */
+  flex-direction: column; /* Alinea los elementos hijos en una columna (uno debajo del otro). */
+  align-items: center; /* Centra los elementos hijos horizontalmente. */
+  margin-bottom: 55px; /* Añade un margen inferior de 55px. */
+  padding: 0 16px; /* Aplica un relleno horizontal de 16px a ambos lados. */
+  width: 100%; /* El contenedor ocupará el 100% del ancho disponible. */
+  margin-top: calc(40px + (120px - 40px) * var(--platform-scale)); 
+  /* Ajusta el margen superior dinámicamente según el valor de la variable personalizada `--platform-scale`. */
+}
+
+/* Agrega margen superior adicional para pantallas más grandes */
+@media (min-width: 768px) {
+  .container {
+      margin-top: 120px; /* Aumenta el margen superior en pantallas más anchas */
   }
-  
-  .logo {
-    width: calc(60vw);
-    height: calc(20vw);
-    max-width: 300px;
-    max-height: 100px;
-    min-width: 150px;
-    min-height: 50px;
-    margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+      margin-top: 150px; /* Más margen superior para pantallas aún más grandes */
   }
-  
-  .addressContainer,
-  .instagramContainer {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-  
-  .address,
-  .instagram {
-    font-size: clamp(14px, 4vw, 18px);
-    color: #333;
-    margin-left: 10px;
-  }
-  
-  .icon {
-    color: #333;
-    font-size: 20px;
-  }
-  
+}
+
+.logo {
+  width: calc(60vw); /* El ancho de la imagen será un 60% del ancho de la ventana gráfica. */
+  height: calc(20vw); /* La altura será un 20% del ancho de la ventana gráfica. */
+  max-width: 300px; /* Establece un ancho máximo de 300px para evitar que crezca demasiado. */
+  max-height: 100px; /* Establece una altura máxima de 100px. */
+  min-width: 150px; /* Establece un ancho mínimo de 150px para evitar que sea demasiado pequeño. */
+  min-height: 50px; /* Establece una altura mínima de 50px. */
+  margin-bottom: 10px; /* Añade un margen inferior de 10px. */
+}
+
+.addressContainer,
+.instagramContainer {
+  display: flex; /* Aplica diseño flexible a los contenedores para organizar los hijos en línea. */
+  align-items: center; /* Centra los elementos hijos verticalmente dentro del contenedor. */
+  margin: 5px 0; /* Añade un margen vertical de 5px entre los contenedores. */
+  text-decoration: none; /* Elimina el subrayado de los enlaces. */
+}
+
+.address,
+.instagram {
+  font-size: clamp(14px, 4vw, 18px); 
+  /* Ajusta dinámicamente el tamaño de la fuente entre 14px y 18px, dependiendo del ancho de la ventana. */
+  color: #333; /* Establece el color del texto en un tono gris oscuro. */
+  margin-left: 10px; /* Añade un margen a la izquierda para separar el texto del ícono. */
+  text-decoration: none; /* Elimina el subrayado del texto de los enlaces. */
+}
+
+.icon {
+  color: #333; /* Establece el color del ícono en gris oscuro. */
+  font-size: 20px; /* Ajusta el tamaño de la fuente de los íconos a 20px. */
+}
