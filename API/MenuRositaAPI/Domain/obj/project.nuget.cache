@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "oSThBdiFs5kGn8MeyLLXn7BRmP/Tjy1CL+V6PPhoYkNX3P4EoOWGMtUxbJYUr9F1B3gbd0b9m08ah7qneKv9wQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\Bere\\GIT\\bar-menus\\API\\MenuRositaAPI\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"
+  ],
+  "logs": []
+}
