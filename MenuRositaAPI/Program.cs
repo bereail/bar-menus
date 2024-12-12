@@ -3,11 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using WebApplication1.Data.Interfaces;
-using WebApplication1.Data.Repositories;
 using WebApplication1.Models;
 using Microsoft.AspNetCore.Identity;
 using MenuRositaAPI.Models;
+using WebApplication1.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,8 +45,7 @@ builder.Services.AddDbContext<RositaMenuDBContext>(options =>
 );
 
 // Registering the UserService and PasswordHasher for dependency injection
-builder.Services.AddScoped<IUserRepository, UserService>();
-builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Configuring CORS policies
 #region CORS

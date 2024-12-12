@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Interfaces\" />
     <Folder Include="Models\Enums\" />
   </ItemGroup>
 

@@ -2,9 +2,10 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using MenuRositaAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace MenuRositaAPI.Models;
+namespace WebApplication1.Models;
 
 public partial class RositaMenuDBContext : DbContext
 {
@@ -25,7 +26,7 @@ public partial class RositaMenuDBContext : DbContext
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC074094D6FC");
+            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07D03FC1D1");
 
             entity.ToTable("Category");
 
@@ -35,12 +36,12 @@ public partial class RositaMenuDBContext : DbContext
 
             entity.HasOne(d => d.Section).WithMany(p => p.Categories)
                 .HasForeignKey(d => d.SectionId)
-                .HasConstraintName("FK__Category__Sectio__4BAC3F29");
+                .HasConstraintName("FK__Category__Sectio__5070F446");
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC071C1488EC");
+            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC07533999D1");
 
             entity.ToTable("Product");
 
@@ -52,12 +53,12 @@ public partial class RositaMenuDBContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Product__Categor__4E88ABD4");
+                .HasConstraintName("FK__Product__Categor__534D60F1");
         });
 
         modelBuilder.Entity<Section>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Section__3214EC07A0413C80");
+            entity.HasKey(e => e.Id).HasName("PK__Section__3214EC07BBACDA06");
 
             entity.ToTable("Section");
 
@@ -68,11 +69,11 @@ public partial class RositaMenuDBContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3213E83FD603AFAC");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3213E83F5DAB6089");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__AB6E616406A68B91").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__AB6E6164AA38D76C").IsUnique();
 
-            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC572A913F3C3").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC5727591865E").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Email)
@@ -81,7 +82,7 @@ public partial class RositaMenuDBContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("email");
             entity.Property(e => e.IsAdmin)
-                .HasDefaultValueSql("((0))")
+                .HasDefaultValue(false)
                 .HasColumnName("isAdmin");
             entity.Property(e => e.Pass)
                 .IsRequired()
