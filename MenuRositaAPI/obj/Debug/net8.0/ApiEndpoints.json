@@ -16,6 +16,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApplication1.Controllers.CategoryController",
+    "Method": "CreateCategory",
+    "RelativePath": "api/Category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "WebApplication1.Models.Dtos.CategoryDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "sectionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MenuRositaAPI.Controllers.ProductController",
     "Method": "GetProducts",
     "RelativePath": "api/Product",
@@ -123,5 +144,57 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.SectionController",
+    "Method": "CreateSectionAsync",
+    "RelativePath": "api/Section",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "section",
+        "Type": "WebApplication1.Models.Dtos.Credentials.SectionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MenuRositaAPI.Models.Section",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.SectionController",
+    "Method": "GetSectionByIdAsyn",
+    "RelativePath": "api/Section/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MenuRositaAPI.Models.Section",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

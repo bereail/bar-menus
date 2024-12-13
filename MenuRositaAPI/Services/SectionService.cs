@@ -27,9 +27,18 @@ namespace WebApplication1.Services
         // Obtener un producto por id
         public async Task<Section> GetSectionByIdAsync(int id)
         {
-            return await _context.Sections.Include(p => p.Id)
-                .FirstOrDefaultAsync(p => p.Id == id);
+            var section = await _context.Sections
+                .Include(s => s.Categories)  // Incluye las categorías asociadas
+                .FirstOrDefaultAsync(s => s.Id == id);
+
+            if (section == null)
+            {
+                throw new Exception("Sección no encontrada.");
+            }
+
+            return section;
         }
+
 
     }
 }

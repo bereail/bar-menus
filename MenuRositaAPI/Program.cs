@@ -49,6 +49,8 @@ builder.Services.AddDbContext<RositaMenuDBContext>(options =>
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISectionService, SectionService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 
 
 // Configuring CORS policies
