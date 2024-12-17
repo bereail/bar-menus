@@ -54,5 +54,48 @@ namespace WebApplication1.Services
             return category;
         }
 
+        public async Task<Category> EditCategoryAsync(int id, CategoryDto categoryDto)
+        {
+            var category = await _context.Categories.FindAsync(id); // Corregir esta línea
+
+            if (category == null)
+            {
+                throw new ArgumentException("Categoría con el ID especificado no encontrada.");
+            }
+
+            // Actualizar propiedades desde CategoryDto
+            category.Name = categoryDto.Name;
+            category.Description = categoryDto.Description;
+
+            // Actualizar la asociación con la sección (si es necesario)
+            category.SectionId = categoryDto.SectionId;
+
+            _context.Categories.Update(category); // Usar el método de actualización del contexto
+            await _context.SaveChangesAsync(); // Guardar los cambios
+
+            return category;
+        }
+
+        public async Task DeleteCategoryAsync(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+
+            if (category == null)
+            {
+                throw new ArgumentException("Categoría con el ID especificado no encontrada.");
+            }
+
+            // Verificar si existen productos asociados antes de la eliminación
+            var hasProducts = await _productRepository.HasProductsAsync(id);
+
+            if (hasProducts)
+            {
+                throw new InvalidOperationException("No se puede eliminar una categoría con productos asociados.");
+            }
+
+            _context.Categories.Remove(category); // Eliminar la categoría
+            await _context.SaveChangesAsync(); // Guardar los cambios
+        }
+
     }
 }

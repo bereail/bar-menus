@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\interfaces\\isectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\interfaces\\isectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\sectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\sectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -27,16 +31,16 @@
       "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\models\\dtos\\categoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:models\\dtos\\categoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\models\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\services\\interfaces\\isectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|solutionrelative:services\\interfaces\\isectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{320A5D50-F3B4-44DB-B2BB-F0F8A1E377CE}|WebApplication1.csproj|c:\\users\\bsolohaga\\desktop\\bere\\git\\bar-menus\\menurositaapi\\models\\rositamenudbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,8 +110,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISectionService.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ISectionService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISectionService.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ISectionService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISectionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:35:21.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwD8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:47:22.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:35:43.708Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -120,154 +163,33 @@
               "RelativeDocumentMoniker": "Models\\Entities\\Category.cs",
               "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Entities\\Category.cs",
               "RelativeToolTip": "Models\\Entities\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-13T14:40:59.694Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T15:01:21.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SectionService.cs",
               "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\SectionService.cs",
               "RelativeDocumentMoniker": "Services\\SectionService.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\SectionService.cs*",
-              "RelativeToolTip": "Services\\SectionService.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\SectionService.cs",
+              "RelativeToolTip": "Services\\SectionService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T19:37:36.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\CategoryService.cs",
-              "RelativeToolTip": "Services\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T12:47:14.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwD8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:47:22.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Dtos\\CategoryDto.cs",
-              "RelativeDocumentMoniker": "Models\\Dtos\\CategoryDto.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Dtos\\CategoryDto.cs",
-              "RelativeToolTip": "Models\\Dtos\\CategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:16:31.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:15:02.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ICategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:35:43.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:45:16.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ISectionService.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ISectionService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ISectionService.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\ISectionService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ISectionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:35:21.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SectionController.cs",
-              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\SectionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SectionController.cs",
-              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\SectionController.cs",
-              "RelativeToolTip": "Controllers\\SectionController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:42:20.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-29T15:06:22.03Z",
               "EditorCaption": ""
@@ -275,6 +197,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwCEAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T14:15:02.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\CategoryService.cs",
+              "RelativeToolTip": "Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T12:47:14.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T15:01:21.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Dtos\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "Models\\Dtos\\CategoryDto.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Dtos\\CategoryDto.cs",
+              "RelativeToolTip": "Models\\Dtos\\CategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T14:16:31.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:45:16.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SectionController.cs",
+              "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\SectionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SectionController.cs",
+              "ToolTip": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\SectionController.cs",
+              "RelativeToolTip": "Controllers\\SectionController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:42:20.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CategoryResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Models\\Dtos\\CategoryResponseDto.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\CategoryResponseDto.cs",
@@ -282,12 +277,11 @@
               "RelativeToolTip": "Models\\Dtos\\CategoryResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:23:57.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T14:23:57.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\bsolohaga\\Desktop\\bere\\GIT\\bar-menus\\MenuRositaAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -295,8 +289,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T12:58:38.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-26T12:58:38.074Z"
             },
             {
               "$type": "Document",
@@ -308,8 +301,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:03:18.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T14:03:18.843Z"
             },
             {
               "$type": "Document",
@@ -321,8 +313,7 @@
               "RelativeToolTip": "Models\\RositaMenuDBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T11:57:05.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T11:57:05.897Z"
             },
             {
               "$type": "Document",
@@ -334,8 +325,7 @@
               "RelativeToolTip": "Services\\ProductService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:46:22.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T14:46:22.55Z"
             },
             {
               "$type": "Document",
@@ -347,8 +337,7 @@
               "RelativeToolTip": "efpt.config.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-12T12:07:24.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T12:07:24.015Z"
             },
             {
               "$type": "Document",
