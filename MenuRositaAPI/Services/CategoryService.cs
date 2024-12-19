@@ -15,45 +15,87 @@ namespace WebApplication1.Services
             _context = context;
         }
 
+        // Crear una nueva categoría asociada a una sección
         public async Task<Category> CreateCategoryAsync(CategoryDto categoryDto, int sectionId)
         {
-            // Buscar la sección por ID
+            // Validar que la sección existe
             var section = await _context.Sections.FindAsync(sectionId);
-
             if (section == null)
             {
-                throw new Exception("La sección no existe.");
+                throw new KeyNotFoundException("La sección especificada no existe.");
             }
 
-            // Convertir CategoryDto a Category
+            // Convertir CategoryDto a Category y asociarla a la sección
             var category = new Category
             {
                 Name = categoryDto.Name,
-                SectionId = sectionId,  // Relacionar con la sección
+                SectionId = sectionId
             };
 
-            // Agregar la nueva categoría a la base de datos
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
 
             return category;
         }
 
+        // Obtener una categoría por ID
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            // Buscar la categoría por su ID
             var category = await _context.Categories
-                .Include(c => c.Section) // Si necesitas incluir la relación con Section
+                .Include(c => c.Section) // Incluir la sección asociada si es necesario
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (category == null)
             {
-                throw new Exception("Categoría no encontrada.");
+                throw new KeyNotFoundException("Categoría no encontrada.");
             }
 
             return category;
         }
 
+<<<<<<< HEAD
+        // Obtener todas las categorías
+        public async Task<List<CategoryDto>> GetAllCategoryAsync()
+        {
+            var categories = await _context.Categories
+                .Include(c => c.Section)
+                .Select(c => new CategoryDto
+                {
+                    Name = c.Name,
+                    SectionId = c.Section.Id // Supone que CategoryDto tiene SectionId
+                })
+                .ToListAsync();
+
+            return categories;
+        }
+
+        // Actualizar una categoría
+        public async Task<Category> UpdateCategoryAsync(int id, CategoryDto categoryDto)
+        {
+            var category = await _context.Categories.FindAsync(id);
+
+            if (category == null)
+            {
+                throw new KeyNotFoundException("Categoría no encontrada.");
+            }
+
+            // Validar que la sección asociada existe si cambia de sección
+            if (categoryDto.SectionId.HasValue && categoryDto.SectionId != category.SectionId)
+            {
+                var section = await _context.Sections.FindAsync(categoryDto.SectionId.Value);
+                if (section == null)
+                {
+                    throw new KeyNotFoundException("La nueva sección especificada no existe.");
+                }
+
+                category.SectionId = categoryDto.SectionId.Value;
+            }
+
+            category.Name = categoryDto.Name;
+
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
+=======
         public async Task<Category> EditCategoryAsync(int id, CategoryDto categoryDto)
         {
             var category = await _context.Categories.FindAsync(id); // Corregir esta línea
@@ -72,16 +114,29 @@ namespace WebApplication1.Services
 
             _context.Categories.Update(category); // Usar el método de actualización del contexto
             await _context.SaveChangesAsync(); // Guardar los cambios
+>>>>>>> 66969313d46059aa48da75a5132e629bbc1019ab
 
             return category;
         }
 
+<<<<<<< HEAD
+        // Eliminar una categoría
+=======
+>>>>>>> 66969313d46059aa48da75a5132e629bbc1019ab
         public async Task DeleteCategoryAsync(int id)
         {
             var category = await _context.Categories.FindAsync(id);
 
             if (category == null)
             {
+<<<<<<< HEAD
+                throw new KeyNotFoundException("Categoría no encontrada.");
+            }
+
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
+        }
+=======
                 throw new ArgumentException("Categoría con el ID especificado no encontrada.");
             }
 
@@ -97,5 +152,6 @@ namespace WebApplication1.Services
             await _context.SaveChangesAsync(); // Guardar los cambios
         }
 
+>>>>>>> 66969313d46059aa48da75a5132e629bbc1019ab
     }
 }

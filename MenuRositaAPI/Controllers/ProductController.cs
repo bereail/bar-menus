@@ -16,112 +16,69 @@ namespace MenuRositaAPI.Controllers
             _productService = productService;
         }
 
-        // GET: api/Product
+   // Obtener todos los productos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProducts()
+        public async Task<ActionResult<List<ProductDto>>> GetAll()
         {
-            var products = await _productService.GetAllAsync();
-            var productDtos = products.Select(p => new ProductDto
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Description = p.Description,
-                Price = p.Price,
-                CategoryId = p.CategoryId
-            }).ToList();
-
-            return Ok(productDtos);
+            var products = await _productService.GetAllProductAsync();
+            return Ok(products); // Devuelve un código 200 con la lista de productos
         }
 
-        // GET: api/Product/5
+        // Obtener un producto por id
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductDto>> GetProduct(int id)
+        public async Task<ActionResult<ProductDto>> GetById(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
             {
-                return NotFound();
+                return NotFound($"Producto con ID {id} no encontrado.");
             }
 
-            var productDto = new ProductDto
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-                CategoryId = product.CategoryId
-            };
-
-            return Ok(productDto);
+            return Ok(product);
         }
 
-        // POST: api/Product
+        // Crear un nuevo producto
         [HttpPost]
-        public async Task<ActionResult<ProductDto>> CreateProduct(ProductDto productDto)
+        public async Task<ActionResult<ProductDto>> Create([FromBody] ProductDto productDto)
         {
-            var product = new Product
+            if (!ModelState.IsValid)
             {
-                Name = productDto.Name,
-                Description = productDto.Description,
-                Price = productDto.Price,
-                CategoryId = productDto.CategoryId
-            };
+                return BadRequest(ModelState); // Devuelve un código 400 si la validación falla
+            }
 
-            var createdProduct = await _productService.CreateAsync(product);
-            var createdProductDto = new ProductDto
-            {
-                Id = createdProduct.Id,
-                Name = createdProduct.Name,
-                Description = createdProduct.Description,
-                Price = createdProduct.Price,
-                CategoryId = createdProduct.CategoryId
-            };
-
-            return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.Id }, createdProductDto);
+            var createdProduct = await _productService.CreateProductAsync(productDto);
+            return CreatedAtAction(nameof(GetById), new { id = createdProduct.Id }, createdProduct);
         }
 
-        // PUT: api/Product/5
+        // Actualizar un producto existente
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, ProductDto productDto)
+        public async Task<ActionResult<ProductDto>> Update(int id, [FromBody] ProductDto productDto)
         {
-            var product = new Product
+            if (!ModelState.IsValid)
             {
-                Id = id,
-                Name = productDto.Name,
-                Description = productDto.Description,
-                Price = productDto.Price,
-                CategoryId = productDto.CategoryId
-            };
+                return BadRequest(ModelState);
+            }
 
-            var updatedProduct = await _productService.UpdateAsync(id, product);
+            var updatedProduct = await _productService.UpdateProductAsync(id, productDto);
             if (updatedProduct == null)
             {
-                return NotFound();
+                return NotFound($"Producto con ID {id} no encontrado.");
             }
 
-            var updatedProductDto = new ProductDto
-            {
-                Id = updatedProduct.Id,
-                Name = updatedProduct.Name,
-                Description = updatedProduct.Description,
-                Price = updatedProduct.Price,
-                CategoryId = updatedProduct.CategoryId
-            };
-
-            return Ok(updatedProductDto);
+            return Ok(updatedProduct);
         }
 
-        // DELETE: api/Product/5
+        // Eliminar un producto
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var success = await _productService.DeleteAsync(id);
-            if (!success)
+            var result = await _productService.DeleteProductAsync(id);
+            if (!result)
             {
-                return NotFound();
+                return NotFound($"Producto con ID {id} no encontrado.");
             }
 
-            return NoContent();
+            return NoContent(); // Devuelve un código 204 si la eliminación fue exitosa
         }
     }
 }

@@ -20,32 +20,79 @@ namespace WebApplication1.Controllers
             _sectionService = sectionService;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Section>> CreateSectionAsync(SectionDto section)
+        // Obtener todas las secciones
+        [HttpGet]
+        public async Task<IActionResult> GetAllSections()
         {
-            // Crear una nueva instancia de Section con los datos proporcionados
-            var newSection = new Section
-            {
-                Name = section.Name,
-            };
-
-            // Llamar al servicio para crear la sección
-            var createdSection = await _sectionService.CreateSectionAsync(newSection);
-
-            // Retornar la respuesta con el objeto creado y la ubicación
-            return CreatedAtAction(nameof(GetSectionByIdAsyn), new { id = createdSection.Id }, createdSection);
+            var sections = await _sectionService.GetAllSectionAsync();
+            return Ok(sections);
         }
 
-        // Este método se asume que existe en tu controlador para que CreatedAtAction funcione
+        // Obtener una sección por id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Section>> GetSectionByIdAsyn(int id)
+        public async Task<IActionResult> GetSectionById(int id)
         {
-            var section = await _sectionService.GetSectionByIdAsync(id);
-            if (section == null)
+            try
             {
-                return NotFound();
+                var section = await _sectionService.GetSectionByIdAsync(id);
+                return Ok(section);
             }
-            return Ok(section);
+            catch (KeyNotFoundException)
+            {
+                return NotFound(new { message = "Sección no encontrada." });
+            }
+        }
+
+        // Crear una nueva sección
+        [HttpPost]
+        public async Task<IActionResult> CreateSection([FromBody] SectionDto sectionDto)
+        {
+            if (sectionDto == null)
+                return BadRequest(new { message = "Los datos de la sección no son válidos." });
+
+            try
+            {
+                var createdSection = await _sectionService.CreateSectionAsync(sectionDto);
+                return CreatedAtAction(nameof(GetSectionById), new { id = createdSection.Id }, createdSection);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = $"Error al crear la sección: {ex.Message}" });
+            }
+        }
+
+
+        // Actualizar una sección
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateSection(int id, [FromBody] SectionDto sectionDto)
+        {
+            if (sectionDto == null)
+                return BadRequest(new { message = "Los datos de la sección no son válidos." });
+
+            try
+            {
+                var updatedSection = await _sectionService.UpdateSectionAsync(id, sectionDto);
+                return Ok(updatedSection);
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound(new { message = "Sección no encontrada." });
+            }
+        }
+
+        // Eliminar una sección
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSection(int id)
+        {
+            try
+            {
+                await _sectionService.DeleteSectionAsync(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound(new { message = "Sección no encontrada." });
+            }
         }
     }
 }

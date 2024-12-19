@@ -4,7 +4,7 @@
     {
         public string Name { get; set; }
 
-        public int SectionId { get; set; }
+        public int? SectionId { get; set; }
 
     }
 }

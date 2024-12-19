@@ -2,6 +2,7 @@
 using WebApplication1.Models;
 using WebApplication1.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models.Dtos;
 
 
 namespace WebApplication1.Services
@@ -16,28 +17,64 @@ namespace WebApplication1.Services
         }
 
         // Obtener todos los productos
-        public async Task<List<Product>> GetAllAsync()
+        public async Task<List<ProductDto>> GetAllProductAsync()
         {
-            return await _context.Products.Include(p => p.Category).ToListAsync();
+            return await _context.Products
+                .Include(p => p.Category)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    CategoryId = p.CategoryId,
+                })
+                .ToListAsync();
         }
 
-        // Obtener un producto por id
-        public async Task<Product> GetByIdAsync(int id)
+
+        // Método para obtener un producto por id usando un DTO
+        public async Task<ProductDto> GetProductByIdAsync(int id)
         {
-            return await _context.Products.Include(p => p.Category)
+            var product = await _context.Products
+                .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+            {
+                return null; // Producto no encontrado
+            }
+
+            return new ProductDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                CategoryId = product.CategoryId,
+            };
         }
 
-        // Crear un nuevo producto
-        public async Task<Product> CreateAsync(Product product)
+        // Método para crear un producto usando un DTO
+        public async Task<ProductDto> CreateProductAsync(ProductDto productDto)
         {
+            var product = new Product
+            {
+                Name = productDto.Name,
+                Description = productDto.Description,
+                Price = productDto.Price,
+                CategoryId = productDto.CategoryId
+            };
+
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
-            return product;
+
+            productDto.Id = product.Id; // Asigna el Id generado al DTO
+            return productDto;
         }
 
-        // Actualizar un producto existente
-        public async Task<Product> UpdateAsync(int id, Product product)
+        // Método para actualizar un producto usando un DTO
+        public async Task<ProductDto> UpdateProductAsync(int id, ProductDto productDto)
         {
             var existingProduct = await _context.Products.FindAsync(id);
             if (existingProduct == null)
@@ -45,17 +82,18 @@ namespace WebApplication1.Services
                 return null; // Producto no encontrado
             }
 
-            existingProduct.Name = product.Name;
-            existingProduct.Description = product.Description;
-            existingProduct.Price = product.Price;
-            existingProduct.CategoryId = product.CategoryId;
+            existingProduct.Name = productDto.Name;
+            existingProduct.Description = productDto.Description;
+            existingProduct.Price = productDto.Price;
+            existingProduct.CategoryId = productDto.CategoryId;
 
             await _context.SaveChangesAsync();
-            return existingProduct;
+
+            return productDto;
         }
 
-        // Eliminar un producto
-        public async Task<bool> DeleteAsync(int id)
+        // Método para eliminar un producto usando un DTO
+        public async Task<bool> DeleteProductAsync(int id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product == null)
