@@ -20,20 +20,22 @@ namespace WebApplication1.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LoginAsync([FromBody] LoginDto loginDto)
         {
-            if (loginDto == null || string.IsNullOrEmpty(loginDto.Username) || string.IsNullOrEmpty(loginDto.Pass))
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Username and password are required.");
+                return BadRequest(ModelState);
             }
 
-            var user = await _userService.AuthenticateAsync(loginDto.Username, loginDto.Pass);
+            var user = await _userService.AuthenticateAsync(loginDto.Username, loginDto.Password);
 
             if (user == null)
             {
-                return Unauthorized("Invalid username or password.");
+                return Unauthorized(new { Message = "Nombre de usuario o contraseña inválidos." });
             }
 
-            // Aquí puedes devolver el usuario autenticado o algún token JWT
-            return Ok(new { Id = user.Id, Username = user.Username });
+            var token = _userService.GenerateJwtToken(user);
+
+            return Ok(new { Token = token });
         }
+
     }
 }

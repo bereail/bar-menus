@@ -42,14 +42,14 @@ builder.Services.AddSwaggerGen(setupAction =>
 
 // Configuring DbContext with SQL Server connection string
 builder.Services.AddDbContext<RositaMenuDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("GenericConnectionString"))
-);
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Registering the UserService and PasswordHasher for dependency injection
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISectionService, SectionService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IMenuService, MenuService>();
 
 
 
@@ -64,15 +64,18 @@ builder.Services.AddCors(options =>
 
     options.AddPolicy("AllowSpecificOrigins", builder =>
     {
-        builder.WithOrigins("http://localhost", "http://localhost:3000")
+        builder.WithOrigins("http://localhost", "http://localhost:3001")
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
 });
 #endregion
 
+
+
+
 // Configuring JWT Authentication
-#region Authentication
+#region Configure JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -100,7 +103,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 #endregion
 
+
+
+
 var app = builder.Build();
+
+app.UseCors("AllowSpecificOrigins");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

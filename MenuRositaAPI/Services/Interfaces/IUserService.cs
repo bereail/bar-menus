@@ -8,6 +8,9 @@ namespace WebApplication1.Services.Interfaces
     public interface IUserService
     {
         Task<User> AuthenticateAsync(string username, string password);
+
+        string GenerateJwtToken(User user);
+
     }
 
 }

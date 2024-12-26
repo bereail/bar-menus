@@ -1,5 +1,9 @@
 ﻿using MenuRositaAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using WebApplication1.Models;
 using WebApplication1.Services.Interfaces;
 
@@ -14,34 +18,39 @@ namespace WebApplication1.Services
                 _context = context;
             }
 
-            public async Task<User> AuthenticateAsync(string username, string password)
+        public async Task<User> AuthenticateAsync(string username, string password)
+        {
+            Console.WriteLine($"Authenticating user: {username}");
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            if (user == null || user.Pass != password)
             {
-                // Imprimir los valores que estás recibiendo para depuración
-                Console.WriteLine($"Authenticating user: {username}");
-
-                // Buscar el usuario en la base de datos por el nombre de usuario
-                var user = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Username == username);
-
-                if (user == null)
-                {
-                    Console.WriteLine("User not found.");
-                    return null; // Usuario no encontrado
-                }
-
-                // Imprimir detalles del usuario encontrado para depuración
-                Console.WriteLine($"User found: {user.Username}, Is Admin: {user.IsAdmin}");
-
-                // Comparar la contraseña proporcionada con la almacenada
-                if (user.Pass != password)
-                {
-                    Console.WriteLine("Password verification failed.");
-                    return null; // Contraseña incorrecta
-                }
-
-                Console.WriteLine("User authenticated successfully.");
-                return user; // Usuario autenticado correctamente
+                return null;
             }
+
+            return user;
+        }
+
+        public string GenerateJwtToken(User user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MySuperSecureKey1234567890AbcDef"));
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim("IsAdmin", user.IsAdmin.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddHours(1),
+                Issuer = "https://localhost:7191",
+                Audience = "GenericAPIonline",
+                SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
-
+}

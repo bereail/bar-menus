@@ -1,0 +1,116 @@
+/* RositaMenu.module.css */
+.container {
+    background-color: #d4a5b0; /* Fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    height: 100vh; /* Ocupa toda la altura */
+    box-sizing: border-box;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los botones horizontalmente */
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  
+  .button {
+    background-color: black;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 70%; /* Ajustamos el ancho por defecto */
+  }
+  
+  .button:hover {
+    background-color: #444;
+  }
+  
+  .buttonContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    font-size: 24px;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .buttonText {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Media Queries */
+  
+  /* Pantallas grandes (tabletas y de mayor tamaño) */
+  @media (min-width: 768px) {
+    .button {
+      width: 40%; /* En pantallas grandes, los botones ocupan el 40% del ancho */
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  }
+  
+  /* Pantallas pequeñas (móviles) */
+  @media (max-width: 768px) {
+    .button {
+      width: 80%; /* Los botones ocupan el 80% del ancho en pantallas pequeñas */
+      padding: 12px;
+    }
+  
+    .title {
+      font-size: 24px; /* Reducción de tamaño de fuente */
+      margin-bottom: 15px;
+    }
+  
+    .icon {
+      font-size: 20px; /* Reducción de tamaño de íconos */
+    }
+  
+    .buttonText {
+      font-size: 14px; /* Reducción del tamaño del texto */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .button {
+      width: 90%; /* Aumentamos el tamaño de los botones en pantallas aún más pequeñas */
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 22px; /* Ajuste adicional en el título */
+    }
+  
+    .icon {
+      font-size: 18px; /* Ajuste en el tamaño de los íconos */
+    }
+  
+    .buttonText {
+      font-size: 12px; /* Ajuste en el tamaño del texto */
+    }
+  }

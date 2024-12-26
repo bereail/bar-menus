@@ -1,10 +1,17 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Elimina padding lateral */
+  margin: 0; /* Asegura que no hay márgenes */
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px; /* Ajusta este valor a la altura de la barra de navegación */
+  box-sizing: border-box;
+}
+
+
   
   .card {
     width: 300px;

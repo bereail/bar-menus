@@ -1,9 +1,11 @@
 ﻿namespace WebApplication1.Models.Dtos.Credentials
 {
-    public class SectionDto
+    public class SectionAllDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
+        public List<CategoryAllDto> Categories { get; set; }
 
-        public List<CategoryDto> Categories { get; set; }
+
     }
 }
