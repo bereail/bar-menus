@@ -2,9 +2,8 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
-namespace MenuRositaAPI.Models;
+namespace WebApplication1.Models;
 
 public partial class Category
 {
@@ -12,10 +11,9 @@ public partial class Category
 
     public string Name { get; set; }
 
-    public int SectionId { get; set; }
+    public int? SectionId { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
-    [JsonIgnore]
     public virtual Section Section { get; set; }
 }

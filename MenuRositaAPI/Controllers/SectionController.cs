@@ -1,4 +1,4 @@
-﻿using MenuRositaAPI.Models;
+﻿/*using MenuRositaAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Dtos;
@@ -45,7 +45,7 @@ namespace WebApplication1.Controllers
 
         // Crear una nueva sección
         [HttpPost]
-        public async Task<IActionResult> CreateSection([FromBody] SectionAllDto sectionDto)
+        public async Task<IActionResult> CreateSection([FromBody] SectionDto sectionDto)
         {
             if (sectionDto == null)
                 return BadRequest(new { message = "Los datos de la sección no son válidos." });
@@ -64,7 +64,7 @@ namespace WebApplication1.Controllers
 
         // Actualizar una sección
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSection(int id, [FromBody] SectionAllDto sectionDto)
+        public async Task<IActionResult> UpdateSection(int id, [FromBody] SectionDto sectionDto)
         {
             if (sectionDto == null)
                 return BadRequest(new { message = "Los datos de la sección no son válidos." });
@@ -95,4 +95,4 @@ namespace WebApplication1.Controllers
             }
         }
     }
-}
+}*/

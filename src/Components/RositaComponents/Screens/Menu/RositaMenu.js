@@ -4,7 +4,7 @@ import { MdFastfood, MdLocalDrink } from "react-icons/md"; // Importación corre
 import styles from '../Menu/RositMenu.style.module.css';
 import HeaderInfo from '../../HeaderInfo';
 
-const MenuScreen = () => {
+const RositaMenu= () => {
   const navigate = useNavigate();
   const width = window.innerWidth;
   const buttonWidth = width * (window.innerWidth > 768 ? 0.4 : 0.7); // Ancho dinámico para botones
@@ -44,4 +44,4 @@ const MenuScreen = () => {
   );
 };
 
-export default MenuScreen;
+export default RositaMenu;

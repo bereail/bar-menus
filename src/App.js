@@ -11,7 +11,7 @@ import CategoryList from "./Components/CrudProduct/Caterogy/CaterogyList";
 import GetMenu from "./Components/CrudProduct/Menu/GetMenu";
 import AuthenticatedLayout from "./Components/Login/AuthenticatedLayout";
 import PublicLayout from "./Components/Login/PublicLayout";
-import RositaNavbar from "./Components/Navbar/RositaNavbar";
+
 
 function App() {
   return (
@@ -31,7 +31,6 @@ function App() {
 
           {/* Rutas protegidas */}
           <Route element={<AuthenticatedLayout />}>
-          <RositaNavbar />
           <Route path="/allMenuRosita" element={<GetMenu />} />
             <Route path="/categorias" element={<CategoryList />} />
           </Route>

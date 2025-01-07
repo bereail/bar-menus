@@ -1,5 +1,4 @@
-﻿using MenuRositaAPI.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using WebApplication1.Models.Dtos;
 
 namespace WebApplication1.Services.Interfaces

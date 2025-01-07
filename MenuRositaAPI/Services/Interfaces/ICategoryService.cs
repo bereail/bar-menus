@@ -1,4 +1,4 @@
-﻿using MenuRositaAPI.Models;
+﻿using WebApplication1.Models;
 using WebApplication1.Models.Dtos;
 
 namespace WebApplication1.Services.Interfaces
@@ -12,6 +12,10 @@ namespace WebApplication1.Services.Interfaces
         Task<Category> CreateCategoryAsync(CategoryDto categoryDto, int sectionId);
 
         Task<Category> UpdateCategoryAsync(int id, CategoryDto categoryDto);
+
+
+        Task<Category> EditCategoryAsync(int id, CategoryDto categoryDto);
+
 
         Task DeleteCategoryAsync(int id);
     }

@@ -1,4 +1,4 @@
-﻿using MenuRositaAPI.Models;
+﻿/*
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.Dtos;
@@ -18,7 +18,7 @@ namespace WebApplication1.Services
 
 
         // Crear una nueva sección
-        public async Task<Section> CreateSectionAsync(SectionAllDto sectionDto)
+        public async Task<Section> CreateSectionAsync(SectionDto sectionDto)
         {
             if (sectionDto == null)
                 throw new ArgumentNullException(nameof(sectionDto));
@@ -34,11 +34,10 @@ namespace WebApplication1.Services
 
             return section;
         }
+    
 
-
-
-        // Obtener un producto por id
-        public async Task<Section> GetSectionByIdAsync(int id)
+    // Obtener un producto por id
+    public async Task<Section> GetSectionByIdAsync(int id)
         {
             var section = await _context.Sections
                 .Include(s => s.Categories)  // Incluye las categorías asociadas
@@ -76,7 +75,7 @@ namespace WebApplication1.Services
 
 
         // Actualizar una sección
-        public async Task<Section> UpdateSectionAsync(int id, SectionAllDto sectionDto)
+        public async Task<Section> UpdateSectionAsync(int id, SectionDto sectionDto)
         {
             var section = await _context.Sections.FindAsync(id);
 
@@ -108,3 +107,4 @@ namespace WebApplication1.Services
         }
     }
 }
+*/

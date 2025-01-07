@@ -1,0 +1,73 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1; /* Asegura que ocupe el espacio disponible */
+  margin-right: 10px; /* Agregado margen entre el nombre/descripción y el precio */
+}
+
+.itemName {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.itemDescription {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+  max-width: 100%; /* Permite que la descripción ocupe todo el ancho disponible */
+  word-wrap: break-word; /* Hace que el texto se ajuste en varias líneas si es necesario */
+}
+
+.itemPrice {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: right;
+  margin-left: 20px; /* Separación entre precio y texto */
+}
+
+.separator {
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Reglas para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column; /* Los elementos se apilan en pantallas pequeñas */
+    align-items: flex-start;
+  }
+
+  .itemName {
+    font-size: 18px; /* Aumentamos el tamaño de la fuente para pantallas pequeñas */
+  }
+
+  .itemDescription {
+    font-size: 14px;
+    margin-top: 8px; /* Menos margen superior en pantallas pequeñas */
+    max-width: 100%; /* Aseguramos que la descripción ocupe todo el ancho */
+  }
+
+  .itemPrice {
+    margin-top: 10px; /* Coloca el precio debajo en pantallas pequeñas */
+    text-align: left; /* Alinea el precio a la izquierda en pantallas pequeñas */
+  }
+
+  .textContainer {
+    margin-right: 0;
+    flex: none; /* No ocupa todo el espacio disponible */
+  }
+}

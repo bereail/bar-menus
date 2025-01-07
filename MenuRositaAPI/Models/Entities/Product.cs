@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MenuRositaAPI.Models;
+namespace WebApplication1.Models;
 
 public partial class Product
 {
@@ -15,7 +15,11 @@ public partial class Product
 
     public decimal Price { get; set; }
 
-    public int CategoryId { get; set; }
+    public int? CategoryId { get; set; }
+
+    public int MenuId { get; set; }
 
     public virtual Category Category { get; set; }
+
+    public virtual Menu Menu { get; set; }
 }

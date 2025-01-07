@@ -1,20 +1,20 @@
-﻿using MenuRositaAPI.Models;
-using Microsoft.AspNetCore.Http;
+﻿/*using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Dtos;
+using WebApplication1.Services;
 using WebApplication1.Services.Interfaces;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/category")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
+        private readonly BarService _barService;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(IBarService barService)
         {
-            _categoryService = categoryService;
+            _barService = barService;
         }
 
         // Crear una nueva categoría asociada a una sección
@@ -91,4 +91,4 @@ namespace WebApplication1.Controllers
             }
         }
     }
-}
+}*/

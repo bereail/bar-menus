@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using MenuRositaAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Models;
@@ -14,7 +13,11 @@ public partial class RositaMenuDBContext : DbContext
     {
     }
 
+    public virtual DbSet<Bar> Bars { get; set; }
+
     public virtual DbSet<Category> Categories { get; set; }
+
+    public virtual DbSet<Menu> Menus { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
@@ -24,9 +27,24 @@ public partial class RositaMenuDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Bar>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Bar__3214EC07CF9A2121");
+
+            entity.ToTable("Bar");
+
+            entity.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            entity.HasOne(d => d.User).WithMany(p => p.Bars)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__Bar__UserId__5165187F");
+        });
+
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07D03FC1D1");
+            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07229ED2B6");
 
             entity.ToTable("Category");
 
@@ -36,12 +54,28 @@ public partial class RositaMenuDBContext : DbContext
 
             entity.HasOne(d => d.Section).WithMany(p => p.Categories)
                 .HasForeignKey(d => d.SectionId)
-                .HasConstraintName("FK__Category__Sectio__5070F446");
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK__Category__Sectio__571DF1D5");
+        });
+
+        modelBuilder.Entity<Menu>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Menu__3214EC0782B4D0C9");
+
+            entity.ToTable("Menu");
+
+            entity.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            entity.HasOne(d => d.Bar).WithMany(p => p.Menus)
+                .HasForeignKey(d => d.BarId)
+                .HasConstraintName("FK__Menu__BarId__5441852A");
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC07533999D1");
+            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC0795356E33");
 
             entity.ToTable("Product");
 
@@ -53,12 +87,17 @@ public partial class RositaMenuDBContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Product__Categor__534D60F1");
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK__Product__Categor__5AEE82B9");
+
+            entity.HasOne(d => d.Menu).WithMany(p => p.Products)
+                .HasForeignKey(d => d.MenuId)
+                .HasConstraintName("FK__Product__MenuId__5BE2A6F2");
         });
 
         modelBuilder.Entity<Section>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Section__3214EC07BBACDA06");
+            entity.HasKey(e => e.Id).HasName("PK__Section__3214EC07577FBA83");
 
             entity.ToTable("Section");
 
@@ -69,31 +108,22 @@ public partial class RositaMenuDBContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3213E83F5DAB6089");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC075AC8A4BE");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__AB6E6164AA38D76C").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4E3CED6C4").IsUnique();
 
-            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC5727591865E").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__A9D105347499746A").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Email)
                 .IsRequired()
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("email");
-            entity.Property(e => e.IsAdmin)
-                .HasDefaultValue(false)
-                .HasColumnName("isAdmin");
+                .HasMaxLength(255);
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.Pass)
                 .IsRequired()
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("pass");
+                .HasMaxLength(255);
             entity.Property(e => e.Username)
                 .IsRequired()
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("username");
+                .HasMaxLength(255);
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -2,20 +2,22 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace MenuRositaAPI.Models;
+namespace WebApplication1.Models;
 
 public partial class User
 {
-    [Key]
     public int Id { get; set; }
-
-    public string Email { get; set; }
 
     public string Username { get; set; }
 
+    public string Email { get; set; }
+
     public string Pass { get; set; }
 
-    public bool? IsAdmin { get; set; }
+    public bool IsAdmin { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public virtual ICollection<Bar> Bars { get; set; } = new List<Bar>();
 }

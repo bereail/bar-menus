@@ -5,7 +5,6 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using WebApplication1.Models;
 using Microsoft.AspNetCore.Identity;
-using MenuRositaAPI.Models;
 using WebApplication1.Services.Interfaces;
 using WebApplication1.Services;
 
@@ -42,15 +41,22 @@ builder.Services.AddSwaggerGen(setupAction =>
 
 // Configuring DbContext with SQL Server connection string
 builder.Services.AddDbContext<RositaMenuDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GenericConnectionString"))
+);
 
 // Registering the UserService and PasswordHasher for dependency injection
-builder.Services.AddScoped<IUserService, UserService>();
+/*builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISectionService, SectionService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();*/
+builder.Services.AddScoped<IBarService, BarService>();
 builder.Services.AddScoped<IMenuService, MenuService>();
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
 
 
 // Configuring CORS policies
@@ -64,18 +70,15 @@ builder.Services.AddCors(options =>
 
     options.AddPolicy("AllowSpecificOrigins", builder =>
     {
-        builder.WithOrigins("http://localhost", "http://localhost:3001")
+        builder.WithOrigins("http://localhost", "http://localhost:3000")
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
 });
 #endregion
 
-
-
-
 // Configuring JWT Authentication
-#region Configure JWT Authentication
+#region Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -103,13 +106,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 #endregion
 
-
-
-
 var app = builder.Build();
-
-app.UseCors("AllowSpecificOrigins");
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

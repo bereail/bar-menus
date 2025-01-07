@@ -15,30 +15,68 @@ namespace WebApplication1.Services
             _context = context;
         }
 
-        public async Task<List<SectionAllDto>> GetMenuAsync()
+        public async Task<MenuDto> CreateMenuAsync(MenuDto menuDto, int barId)
         {
-            var sections = await _context.Sections
-                .Include(s => s.Categories)
-                .ThenInclude(c => c.Products)
+            // Verificar que el Bar existe
+            var bar = await _context.Bars.FindAsync(barId);
+            if (bar == null)
+            {
+                throw new KeyNotFoundException("El bar especificado no existe.");
+            }
+
+            // Crear un nuevo Menu
+            var newMenu = new Menu
+            {
+                Name = menuDto.Name,
+                BarId = barId
+            };
+
+            // Agregar el nuevo Menu al contexto
+            _context.Menus.Add(newMenu);
+            await _context.SaveChangesAsync();
+
+            // Proyectar el resultado a MenuDto
+            return new MenuDto
+            {
+                Id = newMenu.Id,
+                Name = newMenu.Name,
+                BarId = newMenu.BarId
+            };
+        }
+
+
+        public async Task<List<MenuDto>> GetAllMenuAsync()
+        {
+            // Proyectar los datos necesarios a MenuDto
+            var menus = await _context.Menus
+                .Select(c => new MenuDto
+                {
+                    Name = c.Name,
+                    BarId = c.BarId
+                })
                 .ToListAsync();
 
-            return sections.Select(section => new SectionAllDto
-            {
-                Id = section.Id,
-                Name = section.Name,
-                Categories = section.Categories.Select(category => new CategoryAllDto
-                {
-                    Id = category.Id,
-                    Name = category.Name,
-                    Products = category.Products.Select(product => new ProductAllDto
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        Description = product.Description,
-                        Price = product.Price
-                    }).ToList()
-                }).ToList()
-            }).ToList();
+            return menus;
         }
+
+
+
+
+        public async Task<Menu> GetMenuByIdAsync(int id)
+        {
+            // Buscar el menú y sus relaciones necesarias
+            var menu = await _context.Menus
+                .Include(m => m.Bar) // Incluir el bar relacionado, si es necesario
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            // Verificar si el menú no fue encontrado
+            if (menu == null)
+            {
+                throw new KeyNotFoundException("Menú no encontrado.");
+            }
+
+            return menu;
+        }
+
     }
 }
