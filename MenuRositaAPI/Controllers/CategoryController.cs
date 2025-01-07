@@ -1,4 +1,4 @@
-﻿/*using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Dtos;
 using WebApplication1.Services;
@@ -10,11 +10,11 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly BarService _barService;
+        private readonly CategoryService _categoryService;
 
-        public CategoryController(IBarService barService)
+        public CategoryController(ICategoryService categoryService)
         {
-            _barService = barService;
+            _categoryService = (CategoryService?)categoryService;
         }
 
         // Crear una nueva categoría asociada a una sección
@@ -91,4 +91,4 @@ namespace WebApplication1.Controllers
             }
         }
     }
-}*/
+}

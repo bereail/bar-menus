@@ -1,5 +1,4 @@
-﻿/*
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.Dtos;
 using WebApplication1.Services.Interfaces;
@@ -13,6 +12,38 @@ namespace WebApplication1.Services
         public CategoryService(RositaMenuDBContext context)
         {
             _context = context;
+        }
+
+        // Obtener una categoría por ID
+        public async Task<Category> GetCategoryByIdAsync(int id)
+        {
+            var category = await _context.Categories
+                .Include(c => c.Section) // Incluir la sección asociada si es necesario
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (category == null)
+            {
+                throw new KeyNotFoundException("Categoría no encontrada.");
+            }
+
+            return category;
+        }
+
+
+
+        // Obtener todas las categorías
+        public async Task<List<CategoryDto>> GetAllCategoryAsync()
+        {
+            var categories = await _context.Categories
+                .Include(c => c.Section)
+                .Select(c => new CategoryDto
+                {
+                    Name = c.Name,
+                    SectionId = c.Section.Id // Supone que CategoryDto tiene SectionId
+                })
+                .ToListAsync();
+
+            return categories;
         }
 
         // Crear una nueva categoría asociada a una sección
@@ -38,47 +69,19 @@ namespace WebApplication1.Services
             return category;
         }
 
-        // Obtener una categoría por ID
-        public async Task<Category> GetCategoryByIdAsync(int id)
-        {
-            var category = await _context.Categories
-                .Include(c => c.Section) // Incluir la sección asociada si es necesario
-                .FirstOrDefaultAsync(c => c.Id == id);
 
-            if (category == null)
-            {
-                throw new KeyNotFoundException("Categoría no encontrada.");
-            }
-
-            return category;
-        }
-
-        // Obtener todas las categorías
-        public async Task<List<CategoryDto>> GetAllCategoryAsync()
-        {
-            var categories = await _context.Categories
-                .Include(c => c.Section)
-                .Select(c => new CategoryDto
-                {
-                    Name = c.Name,
-                    SectionId = c.Section.Id // Supone que CategoryDto tiene SectionId
-                })
-                .ToListAsync();
-
-            return categories;
-        }
 
         // Actualizar una categoría
         public async Task<Category> UpdateCategoryAsync(int id, CategoryDto categoryDto)
         {
+            // Buscar la categoría por ID
             var category = await _context.Categories.FindAsync(id);
-
             if (category == null)
             {
                 throw new KeyNotFoundException("Categoría no encontrada.");
             }
 
-            // Validar que la sección asociada existe si cambia de sección
+            // Validar si se especifica una nueva sección
             if (categoryDto.SectionId.HasValue && categoryDto.SectionId != category.SectionId)
             {
                 var section = await _context.Sections.FindAsync(categoryDto.SectionId.Value);
@@ -87,63 +90,45 @@ namespace WebApplication1.Services
                     throw new KeyNotFoundException("La nueva sección especificada no existe.");
                 }
 
+                // Asignar la nueva sección si es válida
                 category.SectionId = categoryDto.SectionId.Value;
             }
 
+            // Actualizar el nombre de la categoría
             category.Name = categoryDto.Name;
 
+            // Actualizar el registro en la base de datos
             _context.Categories.Update(category);
             await _context.SaveChangesAsync();
 
-        public async Task<Category> EditCategoryAsync(int id, CategoryDto categoryDto)
-        {
-            var category = await _context.Categories.FindAsync(id); // Corregir esta línea
-
-            if (category == null)
-            {
-                throw new ArgumentException("Categoría con el ID especificado no encontrada.");
-            }
-
-            // Actualizar propiedades desde CategoryDto
-            category.Name = categoryDto.Name;
-            category.Description = categoryDto.Description;
-
-            // Actualizar la asociación con la sección (si es necesario)
-            category.SectionId = categoryDto.SectionId;
-
-            _context.Categories.Update(category); // Usar el método de actualización del contexto
-            await _context.SaveChangesAsync(); // Guardar los cambios
-
-
+            // Devolver la categoría actualizada
             return category;
         }
 
+
         public async Task DeleteCategoryAsync(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            // Buscar la sección por ID
+            var section = await _context.Sections
+                .Include(s => s.Categories) // Incluir las categorías asociadas
+                .FirstOrDefaultAsync(s => s.Id == id);
 
-            if (category == null)
-            {                throw new KeyNotFoundException("Categoría no encontrada.");
+            if (section == null)
+            {
+                throw new KeyNotFoundException("Sección no encontrada.");
             }
 
-            _context.Categories.Remove(category);
+            // Verificar si hay categorías asociadas
+            if (section.Categories.Any())
+            {
+                throw new InvalidOperationException("No se puede eliminar la sección porque tiene categorías asociadas.");
+            }
+
+            // Si no tiene categorías, proceder a eliminar
+            _context.Sections.Remove(section);
             await _context.SaveChangesAsync();
         }
 
-                throw new ArgumentException("Categoría con el ID especificado no encontrada.");
-            }
-
-            // Verificar si existen productos asociados antes de la eliminación
-            var hasProducts = await _productRepository.HasProductsAsync(id);
-
-            if (hasProducts)
-            {
-                throw new InvalidOperationException("No se puede eliminar una categoría con productos asociados.");
-            }
-
-            _context.Categories.Remove(category); // Eliminar la categoría
-            await _context.SaveChangesAsync(); // Guardar los cambios
-        }
 
     }
-}*/
+}

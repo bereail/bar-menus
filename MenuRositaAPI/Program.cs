@@ -46,11 +46,13 @@ builder.Services.AddDbContext<RositaMenuDBContext>(options =>
 
 // Registering the UserService and PasswordHasher for dependency injection
 /*builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ISectionService, SectionService>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();*/
+
+builder.Services.AddScoped<IProductService, ProductService>();*/
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBarService, BarService>();
 builder.Services.AddScoped<IMenuService, MenuService>();
+builder.Services.AddScoped<ISectionService, SectionService>();
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

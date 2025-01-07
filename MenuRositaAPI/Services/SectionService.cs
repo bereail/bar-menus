@@ -1,8 +1,6 @@
-﻿/*
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.Dtos;
-using WebApplication1.Models.Dtos.Credentials;
 using WebApplication1.Services.Interfaces;
 
 namespace WebApplication1.Services
@@ -17,27 +15,9 @@ namespace WebApplication1.Services
         }
 
 
-        // Crear una nueva sección
-        public async Task<Section> CreateSectionAsync(SectionDto sectionDto)
-        {
-            if (sectionDto == null)
-                throw new ArgumentNullException(nameof(sectionDto));
 
-            // Convertir el DTO a una entidad
-            var section = new Section
-            {
-                Name = sectionDto.Name
-            };
-
-            _context.Sections.Add(section);
-            await _context.SaveChangesAsync();
-
-            return section;
-        }
-    
-
-    // Obtener un producto por id
-    public async Task<Section> GetSectionByIdAsync(int id)
+        // Obtener un producto por id
+        public async Task<Section> GetSectionByIdAsync(int id)
         {
             var section = await _context.Sections
                 .Include(s => s.Categories)  // Incluye las categorías asociadas
@@ -50,6 +30,7 @@ namespace WebApplication1.Services
 
             return section;
         }
+
 
 
         // Obtener todas las secciones
@@ -71,6 +52,27 @@ namespace WebApplication1.Services
             return sections;
         }
 
+
+
+
+        // Crear una nueva sección
+        public async Task<Section> CreateSectionAsync(SectionDto sectionDto)
+        {
+            if (sectionDto == null)
+                throw new ArgumentNullException(nameof(sectionDto));
+
+            // Convertir el DTO a una entidad
+            var section = new Section
+            {
+                Name = sectionDto.Name
+            };
+
+            _context.Sections.Add(section);
+            await _context.SaveChangesAsync();
+
+            return section;
+        }
+    
 
 
 
@@ -105,6 +107,6 @@ namespace WebApplication1.Services
             _context.Sections.Remove(section);
             await _context.SaveChangesAsync();
         }
+
     }
 }
-*/

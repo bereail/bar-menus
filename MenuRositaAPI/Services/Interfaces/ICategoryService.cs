@@ -14,9 +14,6 @@ namespace WebApplication1.Services.Interfaces
         Task<Category> UpdateCategoryAsync(int id, CategoryDto categoryDto);
 
 
-        Task<Category> EditCategoryAsync(int id, CategoryDto categoryDto);
-
-
         Task DeleteCategoryAsync(int id);
     }
 }
