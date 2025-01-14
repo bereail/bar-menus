@@ -44,10 +44,9 @@ builder.Services.AddDbContext<RositaMenuDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GenericConnectionString"))
 );
 
-// Registering the UserService and PasswordHasher for dependency injection
-/*builder.Services.AddScoped<IUserService, UserService>();
+// Registering the UserService and PasswordHasher for dependency injectionbuilder.Services.AddScoped<IUserService, UserService>();
 
-builder.Services.AddScoped<IProductService, ProductService>();*/
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBarService, BarService>();
 builder.Services.AddScoped<IMenuService, MenuService>();
@@ -77,6 +76,11 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
+
+
+
+
+
 #endregion
 
 // Configuring JWT Authentication
@@ -116,6 +120,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Enable CORS
+app.UseCors("AllowSpecificOrigins");
 
 app.UseHttpsRedirection();
 

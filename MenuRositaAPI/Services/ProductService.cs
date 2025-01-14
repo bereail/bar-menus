@@ -1,5 +1,4 @@
-﻿/*using MenuRositaAPI.Models;
-using WebApplication1.Models;
+﻿using WebApplication1.Models;
 using WebApplication1.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models.Dtos;
@@ -23,11 +22,11 @@ namespace WebApplication1.Services
                 .Include(p => p.Category)
                 .Select(p => new ProductDto
                 {
-                    Id = p.Id,
                     Name = p.Name,
                     Description = p.Description,
                     Price = p.Price,
                     CategoryId = p.CategoryId,
+                    MenuId = p.MenuId
                 })
                 .ToListAsync();
         }
@@ -47,11 +46,11 @@ namespace WebApplication1.Services
 
             return new ProductDto
             {
-                Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
                 CategoryId = product.CategoryId,
+                MenuId = product.MenuId
             };
         }
 
@@ -63,13 +62,13 @@ namespace WebApplication1.Services
                 Name = productDto.Name,
                 Description = productDto.Description,
                 Price = productDto.Price,
-                CategoryId = productDto.CategoryId
+                CategoryId = productDto.CategoryId,
+                MenuId = productDto.MenuId
             };
 
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
-            productDto.Id = product.Id; // Asigna el Id generado al DTO
             return productDto;
         }
 
@@ -86,6 +85,7 @@ namespace WebApplication1.Services
             existingProduct.Description = productDto.Description;
             existingProduct.Price = productDto.Price;
             existingProduct.CategoryId = productDto.CategoryId;
+            existingProduct.MenuId = productDto.CategoryId;
 
             await _context.SaveChangesAsync();
 
@@ -106,4 +106,4 @@ namespace WebApplication1.Services
             return true;
         }
     }
-}*/
+}

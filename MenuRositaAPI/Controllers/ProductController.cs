@@ -1,5 +1,4 @@
-﻿/*using MenuRositaAPI.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Dtos;
 using WebApplication1.Services.Interfaces;
 
@@ -47,7 +46,7 @@ namespace MenuRositaAPI.Controllers
             }
 
             var createdProduct = await _productService.CreateProductAsync(productDto);
-            return CreatedAtAction(nameof(GetById), new { id = createdProduct.Id }, createdProduct);
+            return CreatedAtAction(nameof(GetById), new { createdProduct });
         }
 
         // Actualizar un producto existente
@@ -81,4 +80,4 @@ namespace MenuRositaAPI.Controllers
             return NoContent(); // Devuelve un código 204 si la eliminación fue exitosa
         }
     }
-}*/
+}
